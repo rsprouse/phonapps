@@ -1,5 +1,9 @@
+#!/bin/bash
+
 # To make sure Bokeh uses the monkeypatched version and does not
 # retrieve an unaltered version from a cdn, set BOKEH_RESOURCES.
 # If the need for the moneypatch to add box select to line glyphs
 # is eliminated then this will no longer be required.
 export BOKEH_RESOURCES=inline
+
+exec "$@"
