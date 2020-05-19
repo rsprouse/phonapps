@@ -1,0 +1,15 @@
+# enable jupyter_server_proxy
+jupyter serverextension enable --sys-prefix jupyter_server_proxy
+
+# Monkeypatch bokeh to allow box select of lines. It's not clear which of these
+# patches is really the one that matters for the desired change.
+# It is also necessary to set the environment variable BOKEH_RESOURCES=inline in a notebook.
+cp /srv/conda/envs/notebook/lib/python3.7/site-packages/bokeh/server/static/js/bokeh.json /srv/conda/envs/notebook/lib/python3.7/site-packages/bokeh/server/static/js/bokeh.json.orig
+cp /srv/conda/envs/notebook/lib/python3.7/site-packages/bokeh/server/static/js/bokeh.min.js /srv/conda/envs/notebook/lib/python3.7/site-packages/bokeh/server/static/js/bokeh.min.js.orig
+# bokeh.json
+perl -pi -e "s#(for\(let e=0,t=_\.length-1;e<t;e\+\+\)\(_\[e\]<=n&&n<=_\[e\+1\]\|\|_\[e\+1\]<=n&&n<=_\[e\]\)&&\(s\.add_to_selected_glyphs\(this\.model\),s\.get_view=\(\)=>this,s\.line_indices\.push\(e\)\);return s})#\1_hit_rect(e){return this._hit_rect_against_index(e)}#" /srv/conda/envs/notebook/lib/python3.7/site-packages/bokeh/server/static/js/bokeh.json
+perl -pi -e "s#(for \(let i = 0, end = values\.length - 1; i < end; i\+\+\) \{\\\n                if \(\(values\[i\] <= val && val <= values\[i \+ 1\]\) \|\| \(values\[i \+ 1\] <= val && val <= values\[i\]\)\) \{\\\n                    result\.add_to_selected_glyphs\(this\.model\);\\\n                    result\.get_view = \(\) => this;\\\n                    result\.line_indices\.push\(i\);\\\n                \}\\\n            \}\\\n            return result;\\\n        \}\\\n)#\1_hit_rect(geometry) {\\\n            return this._hit_rect_against_index(geometry);\\\n        }\\\n#"  /srv/conda/envs/notebook/lib/python3.7/site-packages/bokeh/server/static/js/bokeh.json
+perl -pi -e "s#(for \(let i = 0, end = values\.length - 1; i < end; i\+\+\) \{\\\n            if \(\(values\[i\] <= val && val <= values\[i \+ 1\]\) \|\| \(values\[i \+ 1\] <= val && val <= values\[i\]\)\) \{\\\n                result\.add_to_selected_glyphs\(this\.model\);\\\n                result\.get_view = \(\) => this;\\\n                result\.line_indices\.push\(i\);\\\n            \}\\\n        \}\\\n        return result;\\\n    \}\\\n)#\1_hit_rect(geometry) \{\\\n        return this\._hit_rect_against_index(geometry);\\\n \}\\\n#m" /srv/conda/envs/notebook/lib/python3.7/site-packages/bokeh/server/static/js/bokeh.json
+# bokeh.min.js
+perl -pi -e "s#(for\(let e=0,t=_\.length-1;e<t;e\+\+\)\(_\[e\]<=n&&n<=_\[e\+1\]\|\|_\[e\+1\]<=n&&n<=_\[e\]\)&&\(s.add_to_selected_glyphs\(this.model\),s.get_view=\(\)=>this,s.line_indices.push\(e\)\);return s})#\1_hit_rect(e){return this._hit_rect_against_index(e)}#" /srv/conda/envs/notebook/lib/python3.7/site-packages/bokeh/server/static/js/bokeh.min.js
+
