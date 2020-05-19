@@ -15,5 +15,4 @@ dependencies:
   - pip:
     - praat-parselmouth
     - git+https://github.com/rsprouse/phonlab
-    - git+https://github.com/rsprouse/bokeh_phon
 
