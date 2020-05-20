@@ -12,7 +12,7 @@ Try launching the current master branch with Binder and exploring notebooks:
 
 A notebook launched in appmode executes all cells and displays the results. Markdown cells are rendered normally, and the code is hidden.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rsprouse/phonapps/master?urlpath=%2Fapps%2Fsimple_wav/simple_wavapp.ipynb) Simple waveapp
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rsprouse/phonapps/master?urlpath=%2Fapps%2Fsimple_wavapp/simple_wavapp.ipynb) Simple waveapp
 
 ## Notes
 
