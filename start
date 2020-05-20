@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export EXTERNAL_URL=`hostname`
+
 # This is not installing properly in environment.yml.
 # TODO: Remove the next line when environment.yml install works.
 pip install git+https://github.com/rsprouse/bokeh_phon
