@@ -4,7 +4,7 @@
 # remote_jupyter_proxy_url Python function in notebooks.
 # TODO: proper detection of external url. `hostname` returns
 # the proxied name, not the external name.
-export EXTERNAL_URL=`hostname`
+#export EXTERNAL_URL=`hostname`
 
 # This is not installing properly in environment.yml.
 # TODO: Remove the next line when environment.yml install works.
