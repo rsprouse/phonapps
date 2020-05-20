@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This is an attempt to set EXTERNAL_URL for automatic use of
+# remote_jupyter_proxy_url Python function in notebooks.
+# TODO: proper detection of external url. `hostname` returns
+# the proxied name, not the external name.
 export EXTERNAL_URL=`hostname`
 
 # This is not installing properly in environment.yml.
