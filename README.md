@@ -4,10 +4,15 @@ on a JupyterHub instance, e.g. [Binder](https://mybinder.org).
 
 These apps use Bokeh for interactive plotting.
 
-Try launching the current master branch with Binder:
+Try launching the current master branch with Binder and exploring notebooks:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rsprouse/phonapps/master)
 
+## Try a live notebook in appmode:
+
+A notebook launched in appmode executes all cells and displays the results. Markdown cells are rendered normally, and the code is hidden.
+
+[![Binder](https://mybinder.org/v2/gh/rsprouse/phonapp/master?urlpath=%2Fapps%2Fsimple_wav/simple_wavapp.ipynb) Simple waveapp
 
 ## Notes
 
