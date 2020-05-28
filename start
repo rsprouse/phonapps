@@ -8,7 +8,7 @@
 
 # This is not installing properly in environment.yml.
 # TODO: Remove the next line when environment.yml install works.
-pip install git+https://github.com/rsprouse/bokeh_phon@5525513f799b93a94c0370b0d9203d8084487e24
+pip install git+https://github.com/rsprouse/bokeh_phon@936b328cca75588664a0fce2b94ca21dfb20b362
 
 # To make sure Bokeh uses the monkeypatched version and does not
 # retrieve an unaltered version from a cdn, set BOKEH_RESOURCES.
