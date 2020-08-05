@@ -14,6 +14,8 @@ A notebook launched in appmode executes all cells and displays the results. Mark
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rsprouse/phonapps/master?urlpath=%2Fapps%2Fwaveform_and_spectrogram/waveform_and_spectrogram.ipynb) An app demonstrating client-side (javascript) visualization and playback of an audio waveform and spectrogram
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rsprouse/phonapps/master?urlpath=%2Fapps%2Fspectrum_slice/spectrum_slice.ipynb) Demonstration of the relationship between a spectrogram and a spectrum slice.
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rsprouse/phonapps/master?urlpath=%2Fapps%2Fwavelets/explore_wavelets.ipynb) Explore wavelets
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rsprouse/phonapps/master?urlpath=%2Fapps%2Fsimple_wavapp/simple_wavapp.ipynb) Simple app demonstrating client-side (javascript) visualization and playback of an audio waveform (deprecated for using AudioPlot)
