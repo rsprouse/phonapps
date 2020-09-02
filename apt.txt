@@ -1,2 +1,5 @@
 nano
 vim
+sox
+# byacc is needed for compiling espsfree.
+byacc

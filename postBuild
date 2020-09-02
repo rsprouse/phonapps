@@ -13,3 +13,11 @@ perl -pi -e "s#(for \(let i = 0, end = values\.length - 1; i < end; i\+\+\) \{\\
 # bokeh.min.js
 perl -pi -e "s#(for\(let e=0,t=_\.length-1;e<t;e\+\+\)\(_\[e\]<=n&&n<=_\[e\+1\]\|\|_\[e\+1\]<=n&&n<=_\[e\]\)&&\(s.add_to_selected_glyphs\(this.model\),s.get_view=\(\)=>this,s.line_indices.push\(e\)\);return s})#\1_hit_rect(e){return this._hit_rect_against_index(e)}#" /srv/conda/envs/notebook/lib/python3.7/site-packages/bokeh/server/static/js/bokeh.min.js
 
+# Get and build espsfree
+mkdir -p ~/.local/bin
+export PATH=$PATH:~/.local/bin
+git clone https://github.com/rsprouse/espsfree
+cd espsfree
+cp `pwd`/espsfree-dev/emake.binder ~/.local/bin/emake
+emake
+emake install
