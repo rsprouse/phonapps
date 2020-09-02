@@ -24,5 +24,4 @@ emake
 emake install
 # Clean up
 cd $HOME
-rm -rf $HOME/build
 rm -rf $HOME/espsfree
