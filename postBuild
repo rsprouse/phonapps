@@ -16,8 +16,13 @@ perl -pi -e "s#(for\(let e=0,t=_\.length-1;e<t;e\+\+\)\(_\[e\]<=n&&n<=_\[e\+1\]\
 # Get and build espsfree
 mkdir -p ~/.local/bin
 export PATH=$PATH:~/.local/bin
+cd $HOME
 git clone https://github.com/rsprouse/espsfree
 cd espsfree
 cp `pwd`/espsfree-dev/emake.binder ~/.local/bin/emake
 emake
 emake install
+# Clean up
+cd $HOME
+rm -rf $HOME/build
+rm -rf $HOME/espsfree
