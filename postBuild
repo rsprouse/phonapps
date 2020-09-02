@@ -25,3 +25,10 @@ emake install
 # Clean up
 cd $HOME
 rm -rf $HOME/espsfree
+
+# Make ESPS usage less error prone
+cat << EOF >> $HOME/.profile
+
+#Make ESPS usage less error prone
+export USE_ESPS_COMMON=off
+EOF
