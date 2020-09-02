@@ -1,5 +1,6 @@
 nano
 vim
 sox
-# byacc is needed for compiling espsfree.
+# byacc and flex are needed to compile espsfree.
 byacc
+flex
