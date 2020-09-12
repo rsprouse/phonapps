@@ -8,6 +8,10 @@ Try launching the current master branch with Binder and exploring notebooks:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rsprouse/phonapps/master)
 
+Or Berkeley students can launch on [Datahub](http://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/rsprouse/phonapps&branch=master).
+
+[Spectrum slice](http://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/rsprouse/phonapps&branch=master&subPath=spectrum_slice/spectrum_slice.ipynb) on Datahub.
+
 ## Try a live notebook in appmode:
 
 A notebook launched in appmode executes all cells and displays the results. Markdown cells are rendered normally, and the code is hidden.
