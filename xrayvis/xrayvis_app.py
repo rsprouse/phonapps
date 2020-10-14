@@ -11,7 +11,6 @@ import parselmouth
 
 from bokeh_phon.utils import remote_jupyter_proxy_url_callback, set_default_jupyter_url
 from bokeh_phon.models.audio_button import AudioButton
-from audiolabel import read_label
 from phonlab.array import nonzero_groups
 
 from bokeh.core.query import find
@@ -155,8 +154,6 @@ def xrayvis_app(doc):
             ch0=snd.values[0,:].astype(np.float32),
         ))
 #! TODO: do file caching
-#        tgname = wavname.replace('.wav', '.TextGrid')
-#        [phdf, wddf] = read_label(tgname, ftype='praat')
         phdf = allphdf.loc[allphdf.wavpath == new, :].copy()
         phdf['t1'] = phdf['t1'].astype(np.float32)
         wddf = allwddf.loc[allwddf.wavpath == new, :].copy()
