@@ -539,11 +539,7 @@ def xrayvis_app(doc):
     spec0 = figure(
         name='spec0',
         x_range=ch0.x_range, # Keep times synchronized
-        tooltips=[
-            ("time", "$x{0.0000}"),
-            ("freq", "$y{0.0000}"), ("value", "@sgram0{0.000000}"),
-            ('word', '@word'), ('phone', '@phone')
-        ],
+        tooltips=[("time", "$x{0.0000}"), ("freq", "$y{0.0000}"), ("value", "@sgram0{0.000000}")],
         height=wavspec_height,
         **figargs
     )
