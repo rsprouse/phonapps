@@ -10,6 +10,7 @@ then
   cd $HOME
   logger="${HOME}/datahub_start.phonapps.log"
   pip install praat-parselmouth > $logger 2>&1
+  pip install git+https://github.com/rsprouse/audiolabel >> $logger 2>&1
   pip install git+https://github.com/rsprouse/phonlab >> $logger 2>&1
   pip install git+https://github.com/rsprouse/bokeh_phon >> $logger 2>&1
 
