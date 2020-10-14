@@ -10,7 +10,7 @@ then
   cd $HOME
   logger="${HOME}/datahub_start.phonapps.log"
   date >> $logger 2>&1
-  pip install pyarrow==0.15 >> $logger 2>&1
+  pip install pyarrow==0.16 >> $logger 2>&1
   pip install praat-parselmouth >> $logger 2>&1
   pip install git+https://github.com/rsprouse/audiolabel >> $logger 2>&1
   pip install git+https://github.com/rsprouse/phonlab >> $logger 2>&1
