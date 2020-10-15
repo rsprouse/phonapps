@@ -544,6 +544,9 @@ def xrayvis_app(doc):
         **figargs
     )
     spec0.toolbar.logo = None
+    spec0.x_range.on_change('start', x_range_cb)
+    spec0.x_range.on_change('end', x_range_cb)
+    spec0.on_event(SelectionGeometry, selection_cb)
     spec0.on_event(Tap, cursor_cb)
     spec0.add_layout(cursor)
     spec0.x_range.range_padding = spec0.y_range.range_padding = 0
