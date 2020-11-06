@@ -267,14 +267,20 @@ def xrayvis_app(doc):
 
     def update_sgram():
         '''Update spectrogram based on current values.'''
-        sgrams[0] = snd2specgram(snd, 0.005)
-        specsource.data = dict(
-            sgram0=[sgrams[0].values.astype(np.float32)]
-        )
-        spec0img.glyph.dw = sgrams[0].x_grid().max()
-        spec0img.glyph.dh = sgrams[0].y_grid().max()
-        spec0cmap.low = _low_thresh()
-        spec0.visible = True
+        if snd.end_time < 15:
+            sgrams[0] = snd2specgram(snd, 0.005)
+            specsource.data = dict(
+                sgram0=[sgrams[0].values.astype(np.float32)]
+            )
+            spec0img.glyph.dw = sgrams[0].x_grid().max()
+            spec0img.glyph.dh = sgrams[0].y_grid().max()
+            spec0cmap.low = _low_thresh()
+            spec0.visible = True
+        else:
+            specsource.data = dict(
+                sgram0=[]
+            )
+            spec0.visible = False
 
     def update_trace():
         '''Update the static trace at the cursor time.'''
