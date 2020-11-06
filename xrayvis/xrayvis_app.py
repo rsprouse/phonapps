@@ -117,7 +117,10 @@ def get_cached_fname(fname, base_url, speaker):
         with open(tempwav, 'wb') as twav:
             twav.write(r.content)
         tempsnd = parselmouth.Sound(tempwav)
-        ds_snd = tempsnd.resample(params['downsample_rate'], 50)
+        ds_rate = params['downsample_rate']
+        if tempsnd.end_time >= 15.0:
+            ds_rate = int(ds_rate / 2)
+        ds_snd = tempsnd.resample(ds_rate, 50)
         ds_snd.save(cachefile, parselmouth.SoundFileFormat.WAV)
         # Get .txy
         txyfile = cachefile.replace('.wav', '.txy')
