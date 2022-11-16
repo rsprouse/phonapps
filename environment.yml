@@ -12,6 +12,7 @@ dependencies:
   - jupyter-server-proxy=1.3
   - librosa=0.7
   - appmode=0.7
+  - Jinja2<2.10
   - pip
   - pip:
     - praat-parselmouth
