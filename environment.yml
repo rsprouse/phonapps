@@ -11,7 +11,7 @@ dependencies:
   - jupyterlab=2.1
   - jupyter-server-proxy=1.3
   - librosa=0.7
-  - appmode=0.7
+#  - appmode=0.7
   - jinja2<=2.9
   - pip
   - pip:
